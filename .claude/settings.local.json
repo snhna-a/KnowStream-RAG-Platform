@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm typecheck *)",
+      "Bash(mysql -uroot -p123456 -D PaiSmart -e \"SELECT provider_code, model_name, config_scope, enabled, active, api_base_url FROM model_provider_configs;\")",
+      "Bash(mysql -uroot -p123456 -D PaiSmart -e \"SELECT provider_code, model_name, config_scope, enabled, active FROM model_provider_configs; SHOW TABLES LIKE '%token%'; SHOW TABLES LIKE '%user%';\")",
+      "Bash(mysql -uroot -p123456 -D PaiSmart -e \"DESCRIBE user_token_record;\")",
+      "Bash(mysql -uroot -p123456 -D PaiSmart -e \"SELECT * FROM user_token_record WHERE user_id IN \\('2','user11'\\);\")",
+      "Bash(pnpm add *)",
+      "Bash(node -e \"console.log\\(require\\('pdfjs-dist/package.json'\\).version\\)\")",
+      "Bash(grep -c \"URL\\\\.parse\" node_modules/pdfjs-dist/legacy/build/pdf.mjs)",
+      "Bash(grep -c \"Promise\\\\.try\" node_modules/pdfjs-dist/legacy/build/pdf.mjs)",
+      "Bash(node -e \"const s=require\\('fs'\\).readFileSync\\('node_modules/pdfjs-dist/build/pdf.worker.min.mjs','utf8'\\); const i=s.indexOf\\('Promise.try'\\); console.log\\(s.slice\\(Math.max\\(0,i-120\\), i+220\\)\\);\")"
+    ]
+  }
+}
